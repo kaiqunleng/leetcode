@@ -18,7 +18,7 @@ public:
             
         }
         if(ssum==0){
-            return 0;                    //ËùÓĞÔªËØÎª0µÄÇé¿ö
+            return 0;                    //æ‰€æœ‰å…ƒç´ ä¸º0çš„æƒ…å†µ
         }
         
         
@@ -27,7 +27,7 @@ public:
         firstPass(stRun,enRun,rowRun,numofruns,runLabels,equivalences);
 	    replaceSameLabel(runLabels, equivalences);
         int maxlevel = *max_element(runLabels.begin(), runLabels.end());
-        vector<vector<int>>abc(maxlevel);     //´æ·ÅËùÓĞ¼¯ºÏ×îÖÕµÄËùÊô¹ØÏµ   eg: 1 1 1 1 2 1 2 1 3
+        vector<vector<int>>abc(maxlevel);     //å­˜æ”¾æ‰€æœ‰é›†åˆæœ€ç»ˆçš„æ‰€å±å…³ç³»   eg: 1 1 1 1 2 1 2 1 3
 	    vector<int>mmmax(maxlevel);
 	    for (int i = 1; i <= maxlevel; ++i) {
 
@@ -106,13 +106,13 @@ public:
 		{
 			if (stRun[i] <= enRun[j] && enRun[i] >= stRun[j] && rowRun[i] == rowRun[j] + 1)
 			{
-				if (runLabels[i] == 0) // Ã»ÓĞ±»±êºÅ¹ı
+				if (runLabels[i] == 0) // æ²¡æœ‰è¢«æ ‡å·è¿‡
 					runLabels[i] = runLabels[j];
-				else if (runLabels[i] != runLabels[j])// ÒÑ¾­±»±êºÅ ,ËµÃ÷ÖÁÉÙÓĞ2¸öµÈ¼Û¶Ô                   
-					equivalences.push_back(make_pair(runLabels[i], runLabels[j])); // ±£´æµÈ¼Û¶Ô
+				else if (runLabels[i] != runLabels[j])// å·²ç»è¢«æ ‡å· ,è¯´æ˜è‡³å°‘æœ‰2ä¸ªç­‰ä»·å¯¹                   
+					equivalences.push_back(make_pair(runLabels[i], runLabels[j])); // ä¿å­˜ç­‰ä»·å¯¹
 			}
 		}
-		if (runLabels[i] == 0) // Ã»ÓĞÓëÇ°Ò»ÁĞµÄÈÎºÎrunÖØºÏ
+		if (runLabels[i] == 0) // æ²¡æœ‰ä¸å‰ä¸€åˆ—çš„ä»»ä½•runé‡åˆ
 		{
 			runLabels[i] = idxLabel++;
 		}
@@ -150,7 +150,7 @@ public:
 		{
 			for (vector<bool>::size_type k = 0; k != eqTab[tempList[j] - 1].size(); k++)
 			{
-				if (eqTab[tempList[j] - 1][k] && !labelFlag[k])
+				if (eqTab[tempList[j] - 1][k] && !labelFlag[k])   //å¿…é¡»ä¿è¯é‚»æ¥çŸ©é˜µå¯¹åº”å…ƒç´ ä¸º1ï¼Œä¸”æ²¡æœ‰è¢«æ ‡è®°è¿‡ã€‚
 				{
 					tempList.push_back(k + 1);
 					labelFlag[k] = equaList.size() + 1;
