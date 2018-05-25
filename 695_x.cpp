@@ -22,7 +22,6 @@ public:
         }
         
         
-        
         fillRunvector(grid,numofruns,stRun,enRun,rowRun);
         firstPass(stRun,enRun,rowRun,numofruns,runLabels,equivalences);
 	    replaceSameLabel(runLabels, equivalences);
