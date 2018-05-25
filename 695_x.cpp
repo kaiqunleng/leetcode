@@ -100,6 +100,7 @@ public:
 			firstRunOnPre = firstRunOnCur;
 			lastRunOnPre = i - 1;
 			firstRunOnCur = i;
+			
 
 		}
 		for (int j = firstRunOnPre; j <= lastRunOnPre; j++)
